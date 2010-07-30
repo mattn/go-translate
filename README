@@ -1,0 +1,6 @@
+Google Language Translate Library
+
+    println(translate.Translate("en", "ja", "i'm zakarite who is emperor in cosmic"))
+
+	’N‚ª‰F’ˆ‚Ìc’ézakarite‚æ
+
