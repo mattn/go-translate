@@ -1,7 +1,7 @@
 package main
 
 import (
-	"google/translate"
+	"google/language/translate"
 	"os"
 	"flag"
 )
