@@ -1,6 +1,6 @@
 * Google Language Translate Library
 
-    println(translate.Translate("en", "ja", "i'm zakarite who is emperor in cosmic"))
+    println(translate.Translate("en", "ja", "i'm zakarite what is emperor in cosmic"))
 
-	誰が宇宙の皇帝zakariteよ
+	私は宇宙の皇帝zakariteよ
 
