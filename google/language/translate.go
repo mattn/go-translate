@@ -12,7 +12,11 @@ func Translate(from, to, s string) (t string, err os.Error) {
 		if b, err := ioutil.ReadAll(r.Body); err == nil {
 			var r interface{};
 			if err = json.NewDecoder(bytes.NewBuffer(b)).Decode(&r); err == nil {
-				return r.(map[string]interface{})["responseData"].(map[string]interface{})["translatedText"].(string), nil
+				if r.(map[string]interface{})["responseStatus"].(uint) == 200 {
+					return r.(map[string]interface{})["responseData"].(map[string]interface{})["translatedText"].(string), nil
+				} else {
+					err = os.NewError ( r.(map[string]interface{})["responseDetails"].(string) )
+				}
 			}
 		}
 	}
