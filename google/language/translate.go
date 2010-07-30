@@ -8,7 +8,7 @@ import "net"
 import "os"
 
 func Translate(from, to, s string) (t string, err os.Error) {
-	var url = "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=" + http.URLEscape(s) + "&langpair=" + http.URLEscape(from) + "%7C" + http.URLEscape(to)
+	var url = "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&format=text&q=" + http.URLEscape(s) + "&langpair=" + http.URLEscape(from) + "%7C" + http.URLEscape(to)
 	var r *http.Response;
 	if proxy := os.Getenv("HTTP_PROXY"); len(proxy) > 0 {
 		proxy_url, _ := http.ParseURL(proxy);
