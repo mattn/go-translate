@@ -12,13 +12,12 @@ func Translate(from, to, s string) (t string, err os.Error) {
 	var r *http.Response;
 	if proxy := os.Getenv("HTTP_PROXY"); len(proxy) > 0 {
 		proxy_url, _ := http.ParseURL(proxy);
-		tcp, _ := net.Dial("tcp", "", proxy_url.Host);
+		tcp, _ := net.Dial("tcp", proxy_url.Host);
 		conn := http.NewClientConn(tcp, nil);
 		var req http.Request;
 		req.URL, _ = http.ParseURL(url);
 		req.Method = "GET";
-		err = conn.Write(&req);
-		r, err = conn.Read();
+		r, err = conn.Do(&req);
 	} else {
 		r, _, err = http.Get(url);
 	}
