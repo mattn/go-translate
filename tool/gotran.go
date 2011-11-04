@@ -2,6 +2,7 @@ package main
 
 import (
 	"google/language/translate"
+	"fmt"
 	"os"
 	"flag"
 )
@@ -12,7 +13,7 @@ func main() {
 	flag.Parse();
 	s, err := translate.Translate(*from, *to, flag.Arg(0))
 	if err != nil {
-		os.Stderr.WriteString(err.String() + "\n")
+		fmt.Fprintln(os.Stderr, err)
 	} else {
 		println(s);
 	}
