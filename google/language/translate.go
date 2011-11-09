@@ -3,12 +3,12 @@ package translate
 import (
 	"bytes"
 	"errors"
-	"url"
+	"net/url"
 )
-import "http"
+import "net/http"
 import "net/http/httputil"
 import "io/ioutil"
-import "json"
+import "encoding/json"
 import "net"
 import "os"
 
